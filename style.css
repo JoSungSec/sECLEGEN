@@ -1,0 +1,408 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(21, 21, 21);
+}
+
+/* navbar section */
+
+nav{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    top: 0;
+    width: 100%;
+    color: white;
+    font-size: larger;
+    overflow: hidden;
+    padding: 10px;
+    position: fixed;
+    z-index: 1000;
+}
+.nav_head{
+    font-size: 35px;
+    letter-spacing: 1px;
+}
+li{
+    display: flex;
+    float: inline-start;
+    overflow: hidden;
+}
+li a{
+    padding: 15px;
+    display: block;
+    color: white;
+}
+li a:hover{
+    color: red;
+}
+
+.contact_btn{
+    padding: 10px 30px;
+    color: black;
+    margin-left: 8rem;
+    background-color: red;
+    border-radius: 30px;
+    font-size: large;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+.contact_btn:hover{
+    color: white;
+    border: 3px solid red;
+    background: transparent;
+}
+
+/* responsive navbar */
+
+.checkbtn{
+    font-size: 30px;
+    float: right;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+}
+.checkbox{
+    display: none;
+}
+
+@media screen and(max-width:952px){
+    .nav_head{
+        font-size: 30px;
+    }
+    na li a{
+        font-size: 18px;
+    }
+    nav .contact_btn{
+        margin-left: 20px;
+    }
+}
+@media screen and(max-width:820px){
+    .contact_btn{
+        display: block;
+        margin-left: 150px;
+    }
+    .nav_head{
+        padding-left: 150px;
+    }
+    nav ul{
+        z-index: 1000;
+        position: fixed;
+        width: 60%;
+        height: 50vh;
+        background-color: black;
+        top: 50px; right: -100%;
+        padding: 20px;
+        transition: all .5s;
+    }
+    nav li{
+        text-align: center;
+        display: block;
+        float: left;
+        width: 330px;
+        height: 60px;
+        padding: 5px;
+    }
+    nav .contact_btn{
+        width: 90%;
+        margin-top: 15px;
+    }
+    nav li a{
+        font-size: 20px;
+        color: white;
+    }
+    .checkbox:checked ~ ul{
+        right: 0;
+    }
+}
+
+/* home section */
+
+.home{
+    padding: 220px 100px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    gap: 5rem;
+}
+.description{
+    padding-top: 20px;
+}
+.description h1{
+    font-size: 30px;
+    font-weight: 700;
+}
+.description h1 span{
+    color: red;
+    font-size: 55px;
+}
+.description h2 span{
+    color: red;
+    position: relative;
+}
+.description h2 span:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0px;
+    height: 100%;
+    border-left: 4px solid red;
+    background-color: rgb(21, 21, 21);
+    animation: text 3s infinite backwards steps(10);
+}
+@keyframes text {
+    0%{
+        left: 0;
+    }
+    50%{
+        left: 100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+.description p{
+    width: 500px;
+    margin-top: 20px;
+}
+.home img{
+    background-color: red;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px red;
+    filter: brightness(1.1);
+    transition: .4s ease-in-out;
+    animation: animate 2.5s ease-in-out forwards infinite;
+}
+.home img:hover{
+    box-shadow: 0px 0px 50px red;
+}
+@keyframes animate{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+    transform: translateY(0px);
+    }
+}
+
+/* responsive home section */
+
+@media screen and (max-width: 820px){
+    .home img{
+        margin-top: -7rem;
+        margin-left: -1rem;
+        margin-bottom: -5rem;
+        width: 390px;
+        height: 340px;
+    }
+    .home{
+        grid-template-columns: 1fr;
+        flex-wrap: wrap;
+    }
+    .description{
+        margin-left: -4rem;
+    }
+    .description h1{
+        font-size: 25px;
+    }
+    .description h1 span{
+        font-size: 40px;
+    }
+    .description h2{
+        font-size: 25px;
+    }
+    .description p{
+        font-size: 15px;
+    }
+}
+
+/* about section */
+
+h1.about_section{
+    margin-top: 15rem;
+    color: white;
+    font-size: 50px;
+    padding-top: 100px;
+    text-align: center;
+}
+h1.about_section span{
+    color: red;
+}
+div.card{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    text-align: justify;
+    margin: 70px;
+    color: white;
+}
+.about_card{
+    background-color: rgb(48, 48, 48);
+    padding: 30px;
+    border-radius: 10px;
+    transition: .5s ease;
+}
+.about_card:hover{
+    border: 2px solid red;
+    background-color: red;
+    transform: translateY(-20px);
+}
+.about_card i{
+    font-size: 40px;
+    color: red;
+}
+.about_card h2{
+    font-size: 30px;
+    margin-top: 10px;
+}
+.about_card p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+a {
+    text-decoration: none; /* Remove default underline */
+    color: #fff; /* Set the link text color to white */
+    font-size: 18px; /* Set a font size */
+    background-color: #333; /* Background color for the link */
+    padding: 10px 20px; /* Add some padding around the link */
+    border-radius: 5px; /* Slightly rounded corners */
+    display: inline-block; /* Make the link behave like a block element */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover state for the link */
+a:hover {
+    color: #fff; /* Maintain white text color on hover */
+    background-color: #ab1757; /* Change the background color to red on hover */
+    box-shadow: 0 4px 12px rgba(171, 23, 87, 0.5); /* Add a shadow effect */
+    transform: scale(1.05); /* Slightly scale up the link when hovered */
+}
+
+/* Active link state (optional) */
+a:active {
+    color: #fff; /* Ensure the text stays white on click */
+    background-color: #9b1450; /* Darker red when clicked */
+}
+/* Style for the link */
+a {
+    text-decoration: none;
+    color: #fff; /* Set the link text color to white */
+    font-size: 18px; /* Set a font size */
+    background-color: #333; /* Background color for the link */
+    padding: 10px 20px; /* Add some padding around the link */
+    border-radius: 5px; /* Slightly rounded corners */
+    display: inline-block; /* Make the link behave like a block element */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover state for the link */
+a:hover {
+    color: #fff; /* Keep text white when hovered */
+    background-color: #ab1757; /* Change background color to red on hover */
+    box-shadow: 0 4px 12px rgba(171, 23, 87, 0.5); /* Add a shadow effect */
+    transform: scale(1.05); /* Slightly scale the link up when hovered */
+}
+
+/* Active link state (optional) */
+a:active {
+    color: #fff; /* Ensure the text stays white on click */
+    background-color: #9b1450; /* Darker red when clicked */
+}
+
+
+
+@media screen and (max-width:820px){
+    h1.about_section{
+        font-size: 35px;
+        margin-bottom: -40px;
+    }
+    .card{
+        grid-template-columns: 1fr;
+        flex-wrap: 20px;
+    }
+    .about_card{
+        margin-top: 20px;
+    }
+    .about_card h2{
+        font-size: 25px;
+    }
+}
+
+
+/* contact section */
+
+.form h1{
+    margin: 150px 0px 40px 0px;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    padding-top: 80px;
+}
+.form h1 span{
+    color: red;
+}
+.form input, textarea{
+    width: 550px;
+    margin: 10px 340px;
+    padding: 15px;
+    background-color: rgb(63, 63, 63);
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.form .form_btn{
+    padding: 15px 50px;
+    font-size: 20px;
+    background-color: red;
+    margin: 1.5rem 33rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px red;
+    cursor: pointer;
+    border: none;
+    transition: .3s ease;
+}
+.form .form_btn:hover{
+    background: transparent;
+    border: 2px solid red;
+    color: white;
+}
+
+.footer{
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+*::selection{
+    background-color: #ab1757;
+}
+
+@media screen and (max-width:820px) {
+    .form h1{
+        font-size: 35px;
+    }
+    .form input,textarea{
+        margin-left: 50px;
+        width: 450px;
+    }
+    .form .form_btn{
+        margin-left: 14rem;
+        padding: 10px 25px;
+        font-size: 18px;
+    }
+}
